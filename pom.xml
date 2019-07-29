@@ -83,6 +83,7 @@
 					<environmentName>dev</environmentName>
 					<environmentRef>dev</environmentRef>
 					<solutionStack>64bit Amazon Linux 2016.09 v2.4.0 running Java 8</solutionStack>
+					<versionLabel>some-version</versionLabel>
 				</configuration>
 			</plugin>
         </plugins>
