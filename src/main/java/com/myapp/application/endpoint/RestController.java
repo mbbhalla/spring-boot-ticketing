@@ -26,13 +26,17 @@ public class RestController {
     
     private TicketService ticketService;
     
-    @RequestMapping(path = "/api/tickets", produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(path = "/api/tickets",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Ticket>> tickets() {
 
         return new ResponseEntity<>(ticketService.listTickets(), HttpStatus.OK);
     }
     
-    @RequestMapping(path = "/api/applications", produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(path = "/api/applications", 
+        method = RequestMethod.GET,    
+        produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Application>> applications() {
         
         return new ResponseEntity<>(this.applicationService.listApplications(), HttpStatus.OK);

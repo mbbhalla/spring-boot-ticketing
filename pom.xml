@@ -46,6 +46,22 @@
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 
+        <dependency>
+            <groupId>com.graphql-java</groupId>
+            <artifactId>graphql-spring-boot-starter</artifactId>
+            <version>5.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.graphql-java</groupId>
+            <artifactId>graphiql-spring-boot-starter</artifactId>
+            <version>5.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.graphql-java</groupId>
+            <artifactId>graphql-java-tools</artifactId>
+            <version>5.2.4</version>
+        </dependency>
+
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
@@ -68,22 +84,6 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<executable>true</executable>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>br.com.ingenieux</groupId>
-				<artifactId>beanstalk-maven-plugin</artifactId>
-				<version>1.5.0</version>
-				<configuration>
-					<applicationName>spring-boot-ticketing</applicationName>
-					<s3Bucket>spring-boot-ticketing-beanstalk</s3Bucket>
-					<s3Key>${project.artifactId}/${project.build.finalName}.jar</s3Key>
-					<cnamePrefix>spring-boot-ticketing-dev</cnamePrefix>
-					<environmentName>dev</environmentName>
-					<environmentRef>dev</environmentRef>
-					<solutionStack>64bit Amazon Linux 2016.09 v2.4.0 running Java 8</solutionStack>
-					<versionLabel>some-version</versionLabel>
 				</configuration>
 			</plugin>
         </plugins>

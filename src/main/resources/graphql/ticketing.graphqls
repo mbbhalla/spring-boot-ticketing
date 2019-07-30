@@ -1,0 +1,32 @@
+type Application {
+  id: ID!
+  name: String!
+}
+
+type Ticket {
+  id: ID!
+  owner: String!
+  description: String!
+  application: Application!
+}
+
+type Query {
+  findAllApplications: [Application]!
+  applicationWithId(id: Int!): Application
+  
+  findAllTickets: [Ticket]!
+  ticketWithId(id: Int!): Ticket
+}
+
+# Sample Query
+#query {
+#  findAllTickets {
+#    ticket_id: id
+#    ticket_owner: owner
+#    ticket_description: description
+#    ticket_application: application {
+#      application_id: id
+#      application_name: name    
+#    }
+#  }
+#}
