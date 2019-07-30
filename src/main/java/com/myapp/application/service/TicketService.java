@@ -1,6 +1,7 @@
 package com.myapp.application.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -24,4 +25,9 @@ public class TicketService {
             .collect(Collectors.toList());
     }
     
+    public Optional<Ticket> getTicketById(
+        final Long id) {
+        
+        return this.ticketRepository.findById(id);
+    }
 }
