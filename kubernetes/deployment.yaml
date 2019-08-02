@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-boot-ticketing
+  labels:
+    app: spring-boot-ticketing
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-boot-ticketing
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: spring-boot-ticketing
+    spec:
+      containers:
+      - image: 232228769403.dkr.ecr.ap-southeast-1.amazonaws.com/spring_boot_ticketing:latest
+        imagePullPolicy: Always
+        name: spring-boot-ticketing
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+
